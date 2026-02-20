@@ -144,7 +144,7 @@ em { font-style: italic; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px 24px 80px;
+  padding: 20px 24px 120px;
 }
 
 .hero-badge {
@@ -917,10 +917,6 @@ cite {
 }
 
 @media (max-width: 600px) {
-  .hero-content {
-    padding-bottom: 120px;
-  }
-
   .hero-logo {
     width: min(320px, 85vw);
   }

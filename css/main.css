@@ -917,8 +917,8 @@ cite {
 }
 
 @media (max-width: 600px) {
-  .nav {
-    padding: 20px 24px;
+  .hero-content {
+    padding-bottom: 120px;
   }
 
   .hero-logo {
@@ -934,7 +934,8 @@ cite {
   .email-input {
     border-right: 1px solid var(--border);
     border-radius: 6px;
-    border-bottom: none;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 10px;
   }
   .form-row .btn-primary {
     border-radius: 6px;

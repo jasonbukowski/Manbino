@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manbino — Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 8.5in;
+      height: 11in;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #fff;
+      color: #0d1b2e;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Top color bar */
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #1450a3, #d42b3a, #1450a3);
+    }
+
+    .flyer {
+      padding: 0.45in 0.6in 0.35in;
+      display: flex;
+      flex-direction: column;
+      height: calc(11in - 6px);
+    }
+
+    /* --- HEADER --- */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0.22in;
+    }
+
+    .logo {
+      width: 2.1in;
+      height: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1.5px solid #c9993a;
+      color: #9a7020;
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    /* --- HERO TEXT --- */
+    .hero-text {
+      text-align: center;
+      margin-bottom: 0.22in;
+      border-bottom: 2px solid #d42b3a;
+      padding-bottom: 0.2in;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28pt;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #0d1b2e;
+      margin-bottom: 8px;
+    }
+    .headline em {
+      color: #d42b3a;
+      font-style: italic;
+    }
+
+    .subline {
+      font-size: 10.5pt;
+      color: #4a5570;
+      line-height: 1.55;
+      max-width: 5.8in;
+      margin: 0 auto;
+    }
+    .subline em {
+      font-style: italic;
+      color: #0d1b2e;
+    }
+
+    /* --- SERVICES --- */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.18in;
+      margin-bottom: 0.22in;
+    }
+
+    .service {
+      background: #f5f8ff;
+      border: 1px solid #dce4f0;
+      border-top: 3px solid #1450a3;
+      border-radius: 6px;
+      padding: 0.16in 0.18in;
+    }
+    .service.featured {
+      border-top-color: #d42b3a;
+      background: #fff5f5;
+    }
+
+    .service-icon { font-size: 17pt; margin-bottom: 5px; }
+
+    .service h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #0d1b2e;
+      margin-bottom: 5px;
+    }
+
+    .service p {
+      font-size: 8.5pt;
+      color: #4a5570;
+      line-height: 1.55;
+    }
+
+    /* --- DIVIDER --- */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.2in;
+      color: #c9993a;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #dce4f0;
+    }
+
+    /* --- GIFT + QUOTE --- */
+    .mid-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 0.2in;
+      margin-bottom: 0.22in;
+    }
+
+    .gift h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: #0d1b2e;
+      margin-bottom: 6px;
+    }
+    .gift h3 em {
+      color: #d42b3a;
+      font-style: italic;
+    }
+    .gift p {
+      font-size: 8.5pt;
+      color: #4a5570;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .occasions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .occ {
+      font-size: 7.5pt;
+      border: 1px solid #dce4f0;
+      padding: 3px 9px;
+      border-radius: 100px;
+      color: #4a5570;
+    }
+
+    .quote-block {
+      background: #0d1b2e;
+      border-radius: 8px;
+      padding: 0.18in 0.2in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 10pt;
+      font-style: italic;
+      color: #e8e8f0;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    blockquote::before {
+      content: '\201C';
+      font-size: 22pt;
+      color: #d42b3a;
+      line-height: 0;
+      vertical-align: -0.5rem;
+      margin-right: 2px;
+    }
+    cite {
+      font-size: 7.5pt;
+      color: #6a7a9a;
+      font-style: normal;
+      letter-spacing: 0.05em;
+    }
+
+    /* --- CTA --- */
+    .cta {
+      background: #0d1b2e;
+      border-radius: 8px;
+      padding: 0.18in 0.25in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.18in;
+    }
+    .cta-text h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15pt;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .cta-text p {
+      font-size: 8.5pt;
+      color: #8a9ab8;
+    }
+    .cta-url {
+      text-align: right;
+    }
+    .cta-url .url {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #c9993a;
+      letter-spacing: -0.01em;
+      display: block;
+    }
+    .cta-url .email {
+      font-size: 8pt;
+      color: #6a7a9a;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #dce4f0;
+      padding-top: 0.12in;
+    }
+    .footer-origin {
+      font-size: 7.5pt;
+      color: #9aa0b5;
+      font-style: italic;
+    }
+    .footer-copy {
+      font-size: 7pt;
+      color: #b0b8cc;
+      text-align: right;
+    }
+
+    /* Bottom color bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1450a3, #d42b3a, #1450a3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="flyer">
+
+    <div class="header">
+      <img src="images/logo-large.png" alt="Manbino — Your Personal Maid Man" class="logo" />
+      <div class="badge">Coming Soon to Your Area</div>
+    </div>
+
+    <div class="hero-text">
+      <h1 class="headline">Finally, Someone to <em>Clean Up After You.</em></h1>
+      <p class="subline">
+        Premium home services — cooking, cleaning, maid work — delivered by carefully vetted,
+        impeccably trained, and <em>let's be honest</em>, extremely easy on the eyes young men.
+      </p>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <div class="service-icon">🧹</div>
+        <h3>The Cleaning</h3>
+        <p>Floors, surfaces, bathrooms, kitchens — spotless. No half-measures. No mystery stains left behind. Just a home that looks like it belongs in a magazine.</p>
+      </div>
+      <div class="service featured">
+        <div class="service-icon">🍽️</div>
+        <h3>The Cooking</h3>
+        <p>A proper home-cooked meal, prepared in your kitchen by someone who actually knows what they're doing. Dietary needs respected. Kitchen left cleaner than they found it.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon">✨</div>
+        <h3>The Presence</h3>
+        <p>Let's call it ambiance. Capable, pleasant company while your home is taken care of. We're not going to overthink it. Neither should you.</p>
+      </div>
+    </div>
+
+    <div class="divider">The Perfect Gift</div>
+
+    <div class="mid-row">
+      <div class="gift">
+        <h3>The Gift That <em>Actually Gets Used.</em></h3>
+        <p>
+          Candles. Wine. Another gift card nobody redeems. We think you can do better.
+          Give it sincerely. Give it as a gag. Either way, it's going to be a story.
+        </p>
+        <div class="occasions">
+          <span class="occ">🎂 Birthdays</span>
+          <span class="occ">💔 Divorces</span>
+          <span class="occ">🥂 Promotions</span>
+          <span class="occ">🎉 Bachelorettes</span>
+          <span class="occ">😂 Gag Gifts</span>
+          <span class="occ">💝 Just Because</span>
+        </div>
+      </div>
+      <div class="quote-block">
+        <blockquote>
+          I don't ask for much. Just someone who can cook, clean, and refold a fitted sheet
+          without making it look like a crime scene.
+        </blockquote>
+        <cite>— Every woman, ever</cite>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="cta-text">
+        <h3>Be First to Know When We Launch.</h3>
+        <p>Drop your email at our site. No spam. We're classy like that.</p>
+      </div>
+      <div class="cta-url">
+        <span class="url">manbino.com</span>
+        <span class="email">hello@manbino.com</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-origin">🥃 Born of good friends and bottomless Old Fashioneds.</span>
+      <span class="footer-copy">&copy; 2026 Manbino. Your personal maid man is coming. Be patient.</span>
+    </div>
+
+  </div>
+
+  <div class="bottom-bar"></div>
+
+</body>
+</html>
